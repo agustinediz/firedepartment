@@ -54,14 +54,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     decoration: BoxDecoration(
                       color: Color(0xFF8F1919),
                     ),
-                    child: Stack(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Stack(
-                            children: [],
-                          ),
-                        ),
                         Align(
                           alignment: AlignmentDirectional(0.0, -1.0),
                           child: Container(
@@ -89,7 +84,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       // llamada
                       await launchUrl(Uri(
                         scheme: 'tel',
-                        path: '113',
+                        path: '*150#',
                       ));
                     },
                     text: 'Llamar',
@@ -119,38 +114,73 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, -0.2),
-                  child: Text(
-                    'Bomberos voluntarios de YYY',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Outfit',
-                          color: FlutterFlowTheme.of(context).primaryBackground,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, -0.24),
+                        child: Text(
+                          'Bomberos voluntarios de YYY',
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    fontFamily: 'Outfit',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
                         ),
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, 0.1),
-                  child: Text(
-                    'Por favor, ante una emergéncia, mantenga la calma y recuerde informar al operador:\n\n- ¿Que ve?.\n- Ubicación del siniestro.\n- Puntos de referéncia para llegar al siniestro.\n- Posibles victimas y heridos.',
-                    textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).primaryBackground,
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.1),
+                        child: Text(
+                          'Por favor, ante una emergéncia, mantenga la calma y recuerde informar al operador:\n\n- ¿Que ve?.\n- Ubicación del siniestro.\n- Puntos de referéncia para llegar al siniestro.\n- Posibles victimas y heridos.',
+                          textAlign: TextAlign.start,
+                          style:
+                              FlutterFlowTheme.of(context).labelLarge.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
                         ),
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, 0.64),
-                  child: Text(
-                    '*Atención: su número de teléfono quedará registrado. Las llamadas falsas son punibles por el articulo 197 bis del Código Penal.',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).alternate,
-                          fontSize: 13.0,
+                if (responsiveVisibility(
+                  context: context,
+                  tabletLandscape: false,
+                  desktop: false,
+                ))
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        child: Align(
+                          alignment: AlignmentDirectional(0.0, 0.64),
+                          child: Text(
+                            '*Atención: su número de teléfono quedará registrado. Las llamadas falsas son punibles por el articulo 197 bis del Código Penal.',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  fontSize: 13.0,
+                                ),
+                          ),
                         ),
+                      ),
+                    ],
                   ),
-                ),
               ],
             ),
           ),
