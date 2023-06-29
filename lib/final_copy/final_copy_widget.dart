@@ -44,7 +44,7 @@ class _FinalCopyWidgetState extends State<FinalCopyWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(5.0, 20.0, 5.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 10.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -113,7 +113,7 @@ class _FinalCopyWidgetState extends State<FinalCopyWidget> {
                   alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await launchUrl(Uri(
