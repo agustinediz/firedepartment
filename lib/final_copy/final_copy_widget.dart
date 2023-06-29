@@ -40,11 +40,11 @@ class _FinalCopyWidgetState extends State<FinalCopyWidget> {
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF6E1515),
+        backgroundColor: Color(0xFF8F1919),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 50.0, 20.0, 50.0),
+            padding: EdgeInsetsDirectional.fromSTEB(5.0, 20.0, 5.0, 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -58,8 +58,8 @@ class _FinalCopyWidgetState extends State<FinalCopyWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
                         'assets/images/272209671_472329144237960_842650616169985148_n.jpg',
-                        width: 300.0,
-                        height: 200.0,
+                        width: double.infinity,
+                        height: 210.0,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -113,7 +113,7 @@ class _FinalCopyWidgetState extends State<FinalCopyWidget> {
                   alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await launchUrl(Uri(
